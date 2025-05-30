@@ -17,13 +17,12 @@ test('swaglab', async({page})=>{
             await page.locator('#password').fill("secret_sauce");
             await page.click('#login-button');
                 
-           let addToCartBtn=  await page.locator("(//button[text()='ADD TO CART'])[6]");
-           await page.hover();
-           await page.click(addToCartBtn);
+           await page.hover("(//button[text()='ADD TO CART'])[6]");
+           
+           await page.click("(//button[text()='ADD TO CART'])[6]");
 
-           let cartBtn = await page.locator("#shopping_cart_container");
-           await page.hover(addToCartBtn);
-           await page.click(addToCartBtn);
+           await page.hover("#shopping_cart_container");
+           await page.click("#shopping_cart_container");
 
            await page.click("//a[text()='CHECKOUT']");
            await page.fill("#first-name", "jagesh");
