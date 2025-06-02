@@ -13,10 +13,12 @@ test('swaglab', async({page})=>{
                 secret_sauce
             `).allTextContents;
 
-            await page.fill('#user-name',"standard_user");
+           const user = await page.getByText('standard_user');
+            await page.fill('#user-name',user);
             await page.locator('#password').fill("secret_sauce");
             await page.click('#login-button');
                 
+
            await page.hover("(//button[text()='ADD TO CART'])[6]");
            
            await page.click("(//button[text()='ADD TO CART'])[6]");
@@ -32,4 +34,5 @@ test('swaglab', async({page})=>{
            await page.click("//input[@type='submit']");
            await page.click("//a[text()='FINISH']");
 
+           await page.screenshot({path: 'C:\Users\jages\Pictures\Screenshots\swaglab.png', fullPage: true});
 })
