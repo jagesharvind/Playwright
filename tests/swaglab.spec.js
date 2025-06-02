@@ -31,8 +31,4 @@ test('swaglab', async({page})=>{
            await page.fill("#last-name", "arvind");
            await page.fill("#postal-code", "600000");
 
-           await page.click("//input[@type='submit']");
-           await page.click("//a[text()='FINISH']");
-
-           await page.screenshot({path: 'C:\Users\jages\Pictures\Screenshots\swaglab.png', fullPage: true});
 })
